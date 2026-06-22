@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gëzuar Ditëlindjen Arvina!</title>
+    <style>
+        /* Sfond i animuar dhe modern */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: sfondiAnimuar 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Fsheh konfetit që dalin jashtë ekranit */
+            color: #fff;
+        }
+
+        @keyframes sfondiAnimuar {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Karta kryesore me efekt xhami (Glassmorphism) */
+        .karta {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            z-index: 10;
+            animation: shfaqjeKorte 1.2s ease-in-out;
+        }
+
+        @keyframes shfaqjeKorte {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .emoji-art {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        /* Stili i butonit për videon */
+        .butoni-video {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #ff4081, #e73c7e);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(231, 60, 126, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .butoni-video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(231, 60, 126, 0.6);
+            background: linear-gradient(45deg, #e73c7e, #ff4081);
+        }
+
+        /* Stili për konfetit */
+        .konfeti {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 20px;
+            z-index: 1;
+            animation: bjer linear infinite;
+        }
+
+        @keyframes bjer {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="karta">
+        <div class="emoji-art">🎈 🎉 🎂</div>
+        <h1>Gëzuar Ditëlindjen <br> Arvina!</h1>
+        <p>Sot është një ditë e veçantë sepse bota u bë më e bukur ditën që ti linde.</p>
+        <p>Të uroj shëndet, fat, dashuri dhe çdo ëndërr e jotja të bëhet realitet! Shijo ditën tënde në maksimum! 🥳 ✨</p>
+        
+        <a href="https://endri73.github.io/Arvina-edhe-100/Video/🎈Ramaaaa_jepe_dorëheqjeeen!.mp4" target="_blank" class="butoni-video">🎬 Video e Ditëlindjes</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            krijoKonfeti();
+        };
+
+        function krijoKonfeti() {
+            const ngjyrat = ['#ff4081', '#00e676', '#2979ff', '#ffea00', '#aa00ff', '#ff3d00'];
+            
+            for (let i = 0; i < 100; i++) {
+                let konfeti = document.createElement('div');
+                konfeti.classList.add('konfeti');
+                
+                konfeti.style.left = Math.random() * 100 + 'vw';
+                konfeti.style.backgroundColor = ngjyrat[Math.floor(Math.random() * ngjyrat.length)];
+                konfeti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                konfeti.style.animationDelay = Math.random() * 2 + 's';
+                
+                document.body.appendChild(konfeti);
+            }
+        }
+    </script>
+
+</body>
+</html>
